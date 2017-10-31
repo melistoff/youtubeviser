@@ -1,0 +1,25 @@
+{
+  "name": "youtubeviser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js",
+    "nstart": "nodemon main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "url-parse": "^1.1.9",
+    "urldecode": "^1.0.1",
+    "youtube-info": "^1.1.2",
+    "youtube-video-info": "0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
