@@ -22,18 +22,21 @@ request.get('https://www.youtube.com/get_video_info?&video_id=ON-gzJp2A7g&el=inf
         var list = []
         var ss = {}
         var s = decode(csv).split('&');
-        var i = 0;
+        var i = 1;
         s.forEach(function(e) {
             // console.log(e);
+            var keys = [];
             ss[e.split("=")[0]]=e.split("=")[1]
-            
-            if (ss[e.split("=")[0]]!=undefined) {
-                console.log(e.split("=")[0])
+            if (list[i])
+               keys = Object.keys(list[i])
+            console.log(e.split("=")[0] in keys)   
+            if (e.split("=")[0] in keys) {
+                // console.log(e.split("=")[0])
                 i++
             }  
             list[i] = ss;   
         });
-        console.log(list)
+        // console.log(list[3].quality_label)
 
         // console.log(ss)
     }
