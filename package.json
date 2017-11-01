@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "takeyoutu",
-=======
-  "name": "take_you_tu",
->>>>>>> 4116304332f5da62824d95ab3dd92c93925f3476
   "version": "1.0.0",
   "description": "",
   "main": "node-main.html",
@@ -19,8 +15,6 @@
     "body-parser": "^1.18.2",
     "consolidate": "^0.14.5",
     "express": "^4.16.2",
-    "lodash": "^4.17.4",
-    "request": "^2.83.0",
     "url-parse": "^1.1.9",
     "urldecode": "^1.0.1",
     "youtube-info": "^1.1.2",

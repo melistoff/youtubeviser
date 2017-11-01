@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <link rel="stylesheet" href="/public/css/main.css">
     <script>
         function bodyOnLoad() {
             require('./main.js');
@@ -9,11 +9,8 @@
         }
     </script>
 </head>
-
-<body onload="bodyOnLoad()">
-    <h1>
-        Loading...
-    </h1>
+<body onload="bodyOnLoad()" style="overflow: hidden !important;">
+    <div class="loader">Loading...</div>
 </body>
 
 </html>
