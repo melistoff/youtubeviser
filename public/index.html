@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Take YouTu</title>
+</head>
+<body class="container">
+    <div class="centered">
+        <form action="/" method="post">
+            <div class="input-group">
+                <input type="text" name="yid" class="form-control" placeholder="Youtube video url" aria-label=">Искать...">
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="submit">Go!</button>
+                </span>
+            </div>
+        </form>
+        <hr style="width: 100%; height:2px;">
+        <template>{{error.reason}}</template>
+        <template if="{{data[0]}}">
+            <template class="video-info">
+                <img src="{{info.thumbnail_url}}" alt="{{info.title}}" srcset="" style="float:left; margin-right: 15px;">
+                <p> Описание: {{info.title}}</p>
+                <p> Автор: {{info.author}}</p>
+            </template>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-success">Download</button>
+                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                    <template repeat="{{d in data}}">
+                        <a class="dropdown-item" href="{{d.url}}" download="{{d.url}}">Download</a>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>  
+    <div id="copyright">© Melistoff, 2017</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</body>
+</html>

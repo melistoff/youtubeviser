@@ -1,8 +1,8 @@
 {
-  "name": "youtubeviser",
+  "name": "takeyoutu",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "node-main.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js",
@@ -23,5 +23,14 @@
   "devDependencies": {
     "htmling": "0.0.8",
     "nodemon": "^1.12.1"
+  },
+  "window": {
+    "title": "Take YouTu",
+    "icon": "./link.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 600,
+    "height": 510,
+    "resizable": false
   }
 }
