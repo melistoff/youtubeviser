@@ -29,8 +29,8 @@
     "icon": "./link.png",
     "toolbar": false,
     "frame": true,
-    "width": 600,
-    "height": 510,
+    "width": 700,
+    "height": 600,
     "resizable": false
   }
 }

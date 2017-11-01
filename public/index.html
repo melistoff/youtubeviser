@@ -22,22 +22,27 @@
         <hr style="width: 100%; height:2px;">
         <template>{{error.reason}}</template>
         <template if="{{data[0]}}">
-            <template class="video-info">
-                <img src="{{info.thumbnail_url}}" alt="{{info.title}}" srcset="" style="float:left; margin-right: 15px;">
-                <p> Описание: {{info.title}}</p>
-                <p> Автор: {{info.author}}</p>
-            </template>
+            <div class="video-content">
+                <template class="video-info">
+                    <img src="{{info.thumbnail_url}}" alt="{{info.title}}" srcset="" style="float:left; margin-right: 15px;">
+                    <p> Описание: {{info.title}}</p>
+                    <p> Автор: {{info.author}}</p>
+                </template>
 
-            <div class="btn-group">
-                <button type="button" class="btn btn-success">Download</button>
-                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu">
-                    <template repeat="{{d in data}}">
-                        <a class="dropdown-item" href="{{d.url}}" download="{{d.url}}">Download</a>
-                    </template>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success">Download</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <template repeat="{{d in data}}">
+                            <a class="dropdown-item" href="{{d.url}}" download="{{d.url}}">Download</a>
+                        </template>
+                    </div>
+                </div>
+                <div class="scrollbar" id="style-1">
+                    <div class="force-overflow"></div>
                 </div>
             </div>
         </template>
