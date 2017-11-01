@@ -30,7 +30,7 @@
                 var i = 0;
 
                 var video_info = querystring.parse(body, null, null);
-
+                console.log(video_info)
                 if (video_info.status == "ok") {
                     var url_encoded_fmt_stream = querystring.parse(video_info.url_encoded_fmt_stream_map, null, null);
                    
@@ -41,9 +41,10 @@
                     };
 
                     url_encoded_fmt_stream.url.forEach(function(elm) {
+                        
                         row["url"] = elm;
-                        row['type'] = url_encoded_fmt_stream['type'][i];
-                        row['quality'] = url_encoded_fmt_stream['quality'][i];
+                        row['type'] = getType(url_encoded_fmt_stream.type, i);
+                        // row['quality'] = url_encoded_fmt_stream['quality'][i];
                         data[i] = row;
                         i++;
                         row={};
@@ -63,3 +64,29 @@
         console.log('Example app listening on port 3000!')
     })
 })();
+
+function getType(types, id) {
+
+    var result = [];
+    var i = 0;
+    types.forEach(function(el) {
+        switch (el.split(";")[0].split("/")[1]) {
+            case "mp4":
+                result[i] = 'MPEG4';
+                break;
+            case "webm":
+                result[i] = 'WEBM';
+                break;
+            case "3gpp":
+                result[i] = '3GPP';
+                break;
+        }   
+        i++;
+    }, this);
+    if (id != null) {
+        return result[id]
+    } else {
+        return result
+    }
+    
+}
