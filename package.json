@@ -15,10 +15,7 @@
     "body-parser": "^1.18.2",
     "consolidate": "^0.14.5",
     "express": "^4.16.2",
-    "url-parse": "^1.1.9",
-    "urldecode": "^1.0.1",
-    "youtube-info": "^1.1.2",
-    "youtube-video-info": "0.0.1"
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "htmling": "0.0.8",

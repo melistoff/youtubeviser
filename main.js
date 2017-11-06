@@ -30,7 +30,7 @@
                 var i = 0;
 
                 var video_info = querystring.parse(body, null, null);
-                console.log(video_info)
+
                 if (video_info.status == "ok") {
                     var url_encoded_fmt_stream = querystring.parse(video_info.url_encoded_fmt_stream_map, null, null);
                    
@@ -64,6 +64,13 @@
         console.log('Example app listening on port 3000!')
     })
 })();
+
+function getDuration(seconds) {
+    var min = parseInt(seconds/60);
+    seconds = (seconds - (min * 60));
+
+    return min + " minutes " + seconds + " seconds";
+}
 
 function getType(types, id) {
 
